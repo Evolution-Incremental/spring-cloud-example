@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: spring-cloud-client
+server:
+  port: 8762
+  servlet:
+    context-path: /
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    enabled: true
+    healthcheck:
+      enabled: true
+  instance:
+    health-check-url: ${server.servlet.context-path}/health
+    status-page-url-path: ${server.servlet.context-path}/health
+    home-page-url: ${server.servlet.context-path}/
+
