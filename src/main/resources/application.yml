@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: spring-cloud-client
+
+  datasource:
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/world?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+
+logging:
+  level:
+    com.example: DEBUG
+
+server:
+  port: 8763
+  servlet:
+    context-path: /
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    enabled: true
+    healthcheck:
+      enabled: true
+
+  instance:
+    health-check-url: ${server.servlet.context-path}/health
+    status-page-url-path: ${server.servlet.context-path}/health
+    home-page-url: ${server.servlet.context-path}/
+
+mybatis:
+  mapper-locations: classpath:mappers/*.xml   #
