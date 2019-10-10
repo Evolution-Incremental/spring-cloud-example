@@ -33,6 +33,4 @@ public class SpringCloudEurekaCuntomController {
         Map<String, String> userModel = feignClientUtil.getUserModelByPost(1);
         return userModel;
     }
-
-
 }
