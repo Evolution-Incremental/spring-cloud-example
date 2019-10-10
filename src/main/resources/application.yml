@@ -1,6 +1,14 @@
 spring:
   application:
     name: spring-cloud-customer
+
+  datasource:
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/world?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+
+      #Controller ret
 server:
   port: 8762
   servlet:
